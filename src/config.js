@@ -1,0 +1,57 @@
+// API for STORE Page
+const API_URL = 'http://192.168.33.6/api/fitness/';
+
+const CATALOGSHOP = 'catalog.json';
+const CATALOGNUTRITION = 'nutrition.json';
+const FOODSPROGRAMS = 'foodprograms.json';
+const NUTRITION_K = 'k.json';
+const NUTRITION_P = 'p.json';
+const NUTRITION_M = 'm.json';
+const NUTRITION_F = 'f.json';
+const NUTRITION_O = 'o.json';
+const NUTRITION_J = 'j.json';
+const CATALOGPROGRAM = 'programs.json';
+const CATALOGTRAINER = 'trainers.json';
+
+
+
+
+
+
+const API_URL_CATALOGSHOP = API_URL+CATALOGSHOP;
+const API_URL_PROGRAMS = API_URL+CATALOGPROGRAM;
+const API_URL_TRAINERS = API_URL+CATALOGTRAINER;
+const API_URL_CATALOGNUTRITION = API_URL+CATALOGNUTRITION;
+const API_URL_FOODSPROGRAMS = API_URL+FOODSPROGRAMS;
+const API_URL_NUTRITION_K = API_URL+NUTRITION_K;
+const API_URL_NUTRITION_P = API_URL+NUTRITION_P;
+const API_URL_NUTRITION_M = API_URL+NUTRITION_M;
+const API_URL_NUTRITION_F = API_URL+NUTRITION_F;
+const API_URL_NUTRITION_O = API_URL+NUTRITION_O;
+const API_URL_NUTRITION_J = API_URL+NUTRITION_J;
+
+// API for Nutrition Page
+
+const APP_ACCESS_POINT = 'https://api.edamam.com/api/nutrition-data?';
+const APP_NUTRITION_TYPE = 'logging';
+const APP_ID = 'edb07bdc';
+const APP_KEY = '7253a4f5305f99e535de7bb7bccb2ff6';
+const APP_INGR = '';
+
+const APP_POINT = APP_ACCESS_POINT +
+    'app_id=' + APP_ID +
+    '&app_key=' + APP_KEY +
+    '&nutrition-type=' + APP_NUTRITION_TYPE +
+    '&ingr=';
+const API_URL_NUTRITION = APP_POINT + APP_INGR;
+
+
+
+
+
+
+
+export {API_URL_CATALOGSHOP, API_URL, API_URL_NUTRITION, API_URL_PROGRAMS, API_URL_TRAINERS,
+    API_URL_FOODSPROGRAMS, APP_POINT, APP_INGR, API_URL_CATALOGNUTRITION,
+    API_URL_NUTRITION_K, API_URL_NUTRITION_P, API_URL_NUTRITION_O, API_URL_NUTRITION_M,
+    API_URL_NUTRITION_F, API_URL_NUTRITION_J};

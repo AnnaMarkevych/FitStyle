@@ -11,3 +11,1822 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+*{
+  box-sizing: border-box;
+}
+.content {
+  min-height: calc(100vh - 64px - 70px);
+}
+
+/*Header*/
+nav {
+  padding: 0 1rem;
+}
+nav .brand-logo {
+  font-size: 1.5rem;
+  color: #000;
+  position: inherit;
+}
+.brand-logo i{
+  font-family: "Kerola Bold";
+}
+
+nav i.material-icons {
+  font-size: 26px;
+}
+button{
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.brand-logo{
+  font-family: "Kerola Bold";
+}
+.nav-wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+nav ul a{
+  color: black;
+  font-family: Kerola;
+}
+.navigation-burger{
+  display: none;
+}
+.sidenav-trigger{
+  display: none;
+}
+@media (max-width: 992px){
+  nav  .brand-logo{
+    left: 0 !important;
+    transform: translateX(0)!important;
+    display: flex;
+  }
+  .nav-list{
+    display: none;
+  }
+  .sidenav-trigger{
+    display: block;
+  }
+  #favorite, #cart{
+    position: relative;
+  }
+  #favorite > div > .favorite-quantity{
+    top: 15px;
+    right: 128px;
+  }
+  #cart > .cart > .cart-quantity{
+    top: 15px;
+    right: 82px;
+  }
+}
+
+.test{
+  /*width: 100px;*/
+  background: red;
+  color: white;
+  font-size: 1rem;
+  padding: 2rem;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+.page-footer .footer-copyright{
+  color: black;
+  font-family: Kerola;
+  font-size: 0.8rem;
+}
+
+
+/*page HOME*/
+.baner{
+  height: max-content;
+}
+.baner > img {
+  width: 100vw;
+  height: 100vh;
+}
+.motivation-raw{
+  position: absolute;
+  color: #ff8a65;
+  font-family: "Kerola Bold";
+  font-size: 4rem;
+  top: 180px;
+  left: 40px;
+  text-transform: uppercase;
+  padding: 1rem;
+  /*background-color: #ff8a65;*/
+}
+.advantages{
+  position: absolute;
+  top: 280px;
+  left: 54px;
+  padding: 1rem;
+  border: 2px solid #ff8a65;
+  border-radius: 10px;
+  width: 360px;
+}
+.advantages-list{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+}
+.advantages-list > li > label{
+  font-size: 1.5rem;
+  padding: 0 1rem;
+}
+.advantages-list > li > input{
+  opacity: 1 !important;
+  position: relative !important;
+}
+
+.advantages-list > li:nth-last-of-type(1) input{
+  display: none;
+}
+
+.advantages-list > li:nth-last-of-type(1) label{
+  color: #ff8a65;
+  font-family: "Kerola Bold";
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+.baner992, .baner768{
+  display: none;
+}
+
+@media(max-width: 992px){
+  .baner1200, .baner768, .baner360{
+    display: none;
+  }
+  .baner992{
+    display: block;
+  }
+}
+
+@media(max-width: 768px){
+  .baner1200, .baner992, .baner360{
+    display: none;
+  }
+  .baner768{
+    display: block;
+  }
+  .motivation-raw{
+    top: 280px;
+  }
+  .advantages {
+    top: 400px
+  }
+
+}
+
+@media(max-width: 400px){
+  .baner1200, .baner992, .baner768{
+    display: none;
+  }
+  .baner360{
+    display: block;
+  }
+  .motivation-raw{
+    font-size: 2rem;
+  }
+  .advantages{
+    left: 50%;
+    transform: translateX(-50%);
+    top: 350px;
+  }
+  .advantages-list > li:nth-last-of-type(1) label{
+    font-size: 1rem;
+  }
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat( auto-fill, minmax(250px, 1fr));
+  grid-gap: 1rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content:  space-between;
+    /*cursor: pointer;*/
+    padding: 2rem 1rem;
+  box-shadow: 0 0 10px 0 rgba(41,41,41,.1);
+  transition: box-shadow .5s;
+}
+.card:hover{
+  box-shadow: 2px 8px 20px 0 rgba(102, 102, 102, 0.57);
+}
+.card-item {
+  padding: 0;
+  margin-bottom: .3rem;
+  width: 265px;
+}
+.card .card-image img {
+  height: 330px;
+}
+@media (max-width: 415px){
+  .card .card-image img {
+    height: 400px;
+  }
+}
+
+.sale{
+  padding: .3rem .7rem;
+  background: red;
+  color: white;
+  position: absolute;
+  top: 8px;
+  left: -4px;
+  font-family: Kerola Bold;
+  font-size: .8rem;
+}
+
+
+/*Item Page*/
+@media (max-width: 415px){
+  .product-details.mobile > .product-title,
+  .product-details.mobile > .product-price {
+    font-size: 1.2rem;
+  }
+  .product-photos.mobile{
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 768px){
+  .product-details.mobile{
+  }
+  .product-price{
+    border-bottom: none !important;
+  }
+  .card-item{
+    margin: 0 auto;
+  }
+  nav.deep-orange{
+    width: 100%;
+  }
+  .content{
+    /*height: calc(100vh + 63px + 70px);*/
+    max-width: 98%;
+  }
+
+  .product-photos{
+  display: none !important;
+  overflow: unset !important;
+  }
+  .material-placeholder{
+  display: none;
+  }
+  .product-photos.mobile{
+    display: block !important;
+    width: 70%;
+    margin: 0 auto;
+    max-height: max-content;
+  }
+  .product-photos.mobile > .product-title{
+  margin-bottom: 1rem;
+  }
+  .selected-photo.mobile{
+  display: none;
+  }
+  .product-info{
+  display: flex !important;
+  flex-direction: column !important;
+  border-bottom: none !important;
+  margin-top: 0 !important;
+  /*height: 100vh;*/
+  padding-bottom: 0 !important;
+  }
+  .product-details > .product-title{
+  display: none;
+  }
+  .product-details > .product-price{
+  padding: 1rem;
+  }
+  .slick-next{
+  right: 0 !important;
+  }
+  .slick-prev{
+  left: 0 !important;
+  z-index: 1;
+  }
+  .slick-dots{
+  bottom: -20px !important;
+  }
+  .slick-dots > li{
+  margin: 0 !important;
+  }
+  .title-size{
+    margin-top: 20px !important;
+  }
+
+}
+
+@media (max-width: 1199.98px) {
+  .content{
+    width: 100%;
+    overflow: unset !important;
+  }
+  nav.deep-orange{
+   width: 100vw;
+  }
+  .product-info{
+    grid-template-columns: 1fr 1fr !important;
+    width: 100%;
+    margin-top: 10px;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e7e8ea;
+  }
+  .product-photos{
+    display: block;
+  }
+  .product-details{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .product-details > .product-title,
+  .product-details > .product-price{
+    display: none;
+  }
+  .product-details.mobile{
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .product-details.mobile > .product-title,
+  .product-details.mobile > .product-price{
+    display: block;
+  }
+
+}
+.product-photos.mobile{
+  display: none;
+}
+.product-details.mobile{
+  display: none;
+}
+
+.product-info{
+  display: grid;
+  grid-template-columns: .7fr 1fr 1fr;
+  width: 100%;
+  /*justify-content: space-between;*/
+  margin-top: 10px;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e7e8ea;
+}
+.product-photos{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  width: 300px;
+  max-height: 650px;
+  overflow: auto;
+}
+.product-photos > img {
+  width: 100%;
+  border: 1px solid transparent;
+  transition: border .5s;
+}
+.product-photos > img:hover{
+  cursor: pointer;
+  border: 1px solid grey;
+}
+.selected-photo{
+  width: 450px;
+  height: 650px;
+}
+.selected-photo > img{
+  width: 100%;
+  border: 1px solid transparent;
+}
+.product-title{
+  font-family: "Kerola Bold";
+  font-size: 1.4rem;
+}
+.product-price{
+  color: red;
+  font-size: 2rem;
+  font-family: "Kerola";
+  padding: 1.5rem;
+  border-bottom: 1px solid #e7e8ea;
+}
+.product-sizes{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid #e7e8ea;
+  padding-bottom: 1.5rem;
+}
+.product-size{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  border: 1px solid black;
+  margin-top: 1rem;
+  height: 30px;
+  font-size: 1rem;
+  width: auto;
+  line-height: 30px;
+  /*display: inline-block;*/
+  border-radius: 3px;
+  margin-right: 20px;
+  margin-bottom: 12px;
+  padding: 0 4px;
+  min-width: 32px;
+  cursor: pointer;
+  /*text-align: center;*/
+}
+.title-size{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.title-size span{
+  font-size: .8rem;
+  font-family: "Kerola Bold";
+}
+.noavailable{
+  border: 1px solid #bbb;
+  color: #bbb;
+}
+.available:hover{
+  border: 1px solid red;
+  color: red;
+}
+.custom-radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* создание в label псевдоэлемента  before со следующими стилями */
+.custom-radio+label {
+  content: ' ';
+  display: flex;
+  width: 35px;
+  height: 35px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-right: 0.5em;
+  align-items: center;
+  justify-content: center;
+}
+
+/* стили при наведении курсора на радио */
+.custom-radio:not(:disabled):not(:checked)+label:hover {
+  border-color: red;
+  cursor: pointer;
+  color: red;
+}
+.custom-radio:not(:disabled):not(:checked)+label:hover{
+  color: red;
+}
+
+/* стили для активной радиокнопки (при нажатии на неё) */
+/*.custom-radio:not(:disabled):active+label::before {*/
+  /*background-color: #b3d7ff;*/
+  /*border-color: #b3d7ff;*/
+/*}*/
+
+/* стили для радиокнопки, находящейся в фокусе */
+.custom-radio:focus+label{
+  /*box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);*/
+  background: red;
+  color: white;
+  border: 1px solid red;
+}
+
+
+/*!* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked *!*/
+/*.custom-radio:focus:not(:checked)+label::before {*/
+  /*border-color: #80bdff;*/
+/*}*/
+
+/* стили для радиокнопки, находящейся в состоянии checked */
+.custom-radio:checked+label {
+  border-color: red;
+  background-color: red;
+  color: white;
+  /*background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");*/
+}
+.custom-radio:checked+label{
+  color: white;
+}
+
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.custom-radio:disabled+label {
+  background-color: transparent;
+  border: 1px solid #bbb;
+}
+.radio {
+  position: relative;
+  margin-right: 10px;
+}
+.btn-row{
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+.btn-click{
+  color: black;
+  border: 1px solid black;
+}
+.btn-click:hover{
+  color: red;
+  border: 1px solid red;
+}
+.title-des{
+  font-size: 1.5rem;
+  font-family: "Kerola Bold";
+  text-align: left;
+  margin-bottom: 11px;
+}
+.descriptionDetails{
+  margin-top: 0;
+  text-align: left;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  border-bottom: 1px solid #e7e8ea;
+}
+ li .cart-quantity {
+   margin-right: 1rem;
+ }
+ .cart-quantity{
+
+ }
+ .control-panel{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: baseline;
+   /*padding: .5rem 1rem;*/
+
+ }
+.card .card-title{
+  font-size: .9rem;
+  font-family: Kerola;
+  padding: 5px 0;
+}
+.border{
+  border-top: 1px solid #80808033;
+}
+.control-panel .card-title{
+  padding: 0 .5rem 0 1rem;
+  color: black;
+  /*font-size: .8rem;*/
+  font-family: Kerola;
+}
+.control-panel .product-sizes .radio{
+  margin-right: 5px;
+}
+.control-panel .product-sizes .radio label{
+  width: 20px;
+  height: 20px;
+  font-size: .7rem;
+  margin-right: 0;
+}
+
+.cart{
+  position: relative;
+}
+.cart-quantity {
+  position: absolute;
+  top: 33px;
+  right: -90%;
+  font-family: "Kerola Light";
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.favorite-quantity {
+  position: absolute;
+  top: 33px;
+  right: 65px;
+  font-family: "Kerola Light";
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.control-panel > a{
+  height: 100%;
+  padding: .5rem 1rem;
+}
+.control-panel > a:hover{
+  background: #e7e8ea;
+}
+.control-panel > a > i{
+  color: #ee6e73;
+  cursor: pointer;
+}
+.product-details{
+  margin-left: 1rem;
+}
+.basket-list{
+  position: fixed;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 620px;
+  max-width: 95%;
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgb(41 41 41);
+  max-height: 620px;
+  overflow: auto;
+}
+.basket-close{
+  cursor: pointer;
+  position: absolute;
+  top: .5rem;
+  right: 1.5rem;
+  padding: 10px 0;
+  transition: transform .3s;
+}
+.basket-close:hover{
+  transform: scale(1.2);
+}
+
+.cart-title{
+  display: flex;
+  justify-content: space-between;
+  font-family: "Kerola Bold";
+  font-size: 1.5rem;
+  padding: 20px!important;
+}
+.text-left{
+  text-align: left;
+}
+.collection-item.text-left{
+  padding: 10px 3px 10px 10px;
+  position: relative;
+}
+
+
+
+
+
+/*Styles for Car*/
+
+.collection .collection-item.avatar{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0;
+  padding-right: 8px;
+  padding-bottom: 0;
+  transition: background-color .3s;
+}
+
+.collection .collection-item.avatar:nth-child(odd){
+  background-color: #ff8a6514;
+}
+
+.collection-item-column{
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.cart-footer-column.mobile{
+  display: none;
+}
+@media (max-width: 992px){
+  .collection-item-column{
+    padding: 0 0.5rem;
+  }
+  .cart-footer-column{
+    padding: 0.5rem !important;
+  }
+  .cart-footer-column.mobile{
+    display: block;
+    padding: 0;
+  }
+  .title-mobile{
+    font-size: 1rem;
+  }
+  .collection-item-column:last-child{
+    display: none;
+  }
+  .cart-footer-column:first-child{
+    display: none;
+  }
+  .btn-checkout{
+    font-size: .8rem !important;
+  }
+  .cart-footer-column:last-child{
+    align-items: flex-end;
+  }
+}
+.collection .collection-item.avatar:not(.circle-clipper)>.circle{
+  margin-top: 1.2rem;
+}
+.collection-item-column:nth-child(2){
+  width: 220px!important;
+}
+.collection-item-column:nth-child(5):hover{
+  cursor: pointer;
+}
+.collection-item-column:nth-child(5):hover i{
+  transform: scale(1.2);
+}
+
+.item-id{
+  font-family: "Kerola";
+  font-size: 0.8rem;
+  color: #545151;
+}
+.item-title{
+  font-family: "Kerola Bold";
+  font-size: .8rem;
+  max-width: 100%;
+  white-space: pre-wrap;
+  color: #787878;
+  text-align: left;
+}
+
+.item-column-name{
+  font-family: Kerola;
+  color: #7c7878;
+  font-size: .8rem;
+}
+.quantity-panel{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.count_down{
+  width: 20px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  background: #918c8c26;
+}
+.count_down:hover, .count_up:hover{
+  background: #918c8c4d;
+  transition: background-color .5s;
+  cursor: pointer;
+}
+.count_down:focus, .count_up:focus{
+  background-color: #918c8c4d;
+}
+.count_up{
+  width: 20px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background: #918c8c26;
+}
+input.input-quantity{
+  width: 35px!important;
+  text-align: center!important;
+  border: 1px solid rgb(239, 239, 239)!important;
+  outline: none!important;
+  height: 1rem!important;
+  border-bottom: none!important;
+  box-shadow: none!important;
+  margin: 0!important;
+}
+input.input-quantity:active,
+input.input-quantity:focus {
+  outline: none!important;
+  border-bottom: none!important;
+  box-shadow: none!important;
+}
+
+.item-subtotal{
+  font-family: Kerola;
+}
+.basket-item-delete{
+  transition: transform .2s;
+  cursor: pointer;
+}
+.basket-item-delete:hover{
+  transform: scale(1.2);
+}
+.cart-footer{
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cart-footer-column{
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  width: 30%;
+  display: flex;
+  font-family: Kerola Bold;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.3rem;
+}
+
+.cart-footer-column:nth-child(1){
+  flex-direction: row;
+}
+
+.cart-footer-column:nth-child(3) {
+  align-items: end;
+ }
+.cart-footer-column i img{
+  margin-right: .5rem;
+}
+
+.btn-continue{
+  width: 100%;
+  border: 1px solid #918c8c26;
+  background: transparent;
+  padding: 1rem .5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s, transform 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.3s;
+  font-family: Kerola Bold;
+  font-size: .8rem;
+}
+.btn-continue:hover{
+  box-shadow: 0 0 10px 0 rgba(31,32,68,0.25);
+}
+.btn-checkout:focus{
+  background-color: #00e676!important;
+}
+.btn-continue:focus{
+  background-color: transparent!important;
+}
+
+.btn-checkout{
+  width: 100%;
+  border: 1px solid #918c8c26;
+  background-color: #73da3d;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: .9rem;
+  margin-top: 1rem;
+  font-family: 'Kerola Bold';
+  transition: background-color .5s;
+}
+.btn-checkout:hover{
+  background-color: #66b53c;
+}
+.overlay{
+  width: 100%;
+  height: 100vmax;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color:rgba(11, 10, 10, 0.33);
+  z-index: 1;
+  overflow: hidden;
+}
+.btn-basket .disabled.btn-small {
+  background-color: transparent!important;
+  border: 1px solid #9F9F9F;
+  border-radius: 3px;
+}
+.btn-basket .btn-small{
+  color: #00000054;
+  background-color: #73da3d;
+  /*background-color: #73da3d;*/
+}
+.btn-basket .btn-small:hover{
+  background-color: #66b53c;
+}
+
+.btn-basket{
+  padding: 0 5px;
+}
+
+.favorite{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+  cursor: pointer;
+}
+.favorite i{
+  color: #0000006b;
+}
+a.breadcrumb, a.breadcrumb:before, .breadcrumb:last-child{
+  font-size: .8rem;
+  color: black;
+}
+a.breadcrumb{
+  font-family: Kerola;
+  transition: font-size .5s;
+}
+a.breadcrumb:hover{
+  font-family: "Kerola Bold";
+}
+.breadcrumb:last-child{
+  font-family: "Kerola Bold";
+}
+nav.transparent{
+  box-shadow: none;
+}
+
+.modal > .modal-content > img{
+  width: 75%;
+}
+
+.pagination > li {
+  cursor: pointer;
+  /*padding: .3rem .6rem;*/
+  margin: 0 .3rem;
+  border-radius: 5px;
+  border: 1px solid #00000029;
+}
+
+.pagination li a{
+  font-size: 1rem;
+}
+.nav-item{
+  width: 200px;
+  cursor: pointer;
+}
+.nav-item a{
+  padding: 20px 10px;
+  display: block;
+  text-decoration: none;
+  transition: background-color .5s;
+  text-align: left;
+  /*color: ;*/
+}
+.nav-item:hover{
+  background: #f1f2f3;
+}
+.nav-item a.active{
+  background: #f1f2f3;
+  border-right: 3px solid orange;
+}
+ul, li {
+  text-decoration: none;
+  list-style: none;
+}
+
+/*Tabs Nutrition Page*/
+
+.tabs{
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  margin-top: 1rem;
+  background: transparent;
+}
+.tabs > ul{
+  width: 240px;
+  padding-left: 5px;
+}
+.tabs > ul > li{
+  background-color: #ffccbc;
+  transition: background-color .2s;
+  font-family: Kerola;
+}
+.tabs > ul > li:hover{
+  background-color: #ffab91;
+}
+
+.tab-content{
+  width:  calc(100% - 240px);
+  padding: 26px;
+}
+.tabs ul li{
+  padding: 10px 20px;
+  border-bottom: 1px solid #e7e8ea;
+  cursor: pointer;
+  text-align: left;
+}
+li.active{
+  background-color: #ff8a65 !important;
+  font-weight: bold;
+}
+
+@media (max-width: 1198.98px) {
+  .result-content{
+    flex-direction: column;
+    align-items: center;
+  }
+  .nutrition-res .btn-row.calculator{
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-top: 7rem !important;
+  }
+  .nutrition-res .btn-row.calculator > a{
+    width: 200px;
+    margin: 10px 0;
+  }
+  .title-result{
+    font-size: 1rem !important;
+  }
+  .circle-chart{
+    margin-top: 1rem;
+  }
+  .btn-raw{
+    margin-top: 2rem;
+  }
+}
+
+
+@media (max-width: 922px){
+  .tabs{
+    width: 100%;
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .tabs > ul{
+    width: 100%;
+    padding-left: 0;
+    display: flex;
+  }
+  .tabs ul li{
+    padding: 10px 15px;
+    border-right: 1px solid #ff8a65;
+  }
+  .tabs ul li:nth-child(6){
+    border-right:  none !important;
+  }
+  .res-ul li{
+    border-right:  none !important;
+  }
+
+  .tab-content{
+    width: 100%;
+  }
+}
+@media (max-width: 834px){
+  .tabs > ul{
+   flex-wrap: wrap;
+    justify-content: center;
+  }
+  .tabs ul li{
+    padding: 10px 10px;
+    font-size: .9rem;
+  }
+
+}
+@media (max-width: 768px){
+  .tabs ul li{
+    padding: 10px 10px;
+    font-size: .8rem;
+  }
+}
+@media (max-width: 400px){
+  .result-row{
+    flex-direction: column !important;
+  }
+  .tabs ul li {
+    padding: 8px 3px;
+    width: 55px;
+    overflow-wrap: break-word;
+    white-space: normal;
+    font-size: .6rem;
+  }
+  .res-ul li{
+    width: 100% !important;
+    font-size: .8rem;
+    white-space: inherit !important;
+  }
+  .nutrition-facts{
+    width: 300px !important;
+  }
+  .title-result{
+    font-size: 1rem !important;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  .btn-row.calculator{
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn-row.calculator > a{
+    width: 70%;
+    margin: 5px 0;
+  }
+  #ingr{
+    width: 300px !important;
+  }
+  #ingr+label{
+    width: 200px !important;
+  }
+  .select > span{
+    font-size: .8rem;
+  }
+  .input-title{
+    font-size: .9rem;
+  }
+  .input-field label{
+    font-size: .9rem;
+  }
+  .product-list{
+    width: 100% !important;
+  }
+  .product-list label{
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  .result-content table tr:nth-child(1) th:nth-child(2){
+    max-width: 60px;
+    color: transparent;
+  }
+  .result-content table tr:nth-child(1) th:nth-child(2):after{
+    content: "Carbo";
+    position: absolute;
+    color: black;
+    left: 132px;
+  }
+  .plan{
+    width: 20% !important;
+  }
+  .plan .title, .diet .title{
+    font-size: 1rem;
+  }
+  .plan-res{
+    justify-content: flex-start !important;
+  }
+  .nutrition-res .btn-row.calculator{
+    align-items: center;
+  }
+}
+.input-data{
+  width: 50px;
+  border-bottom: 1px solid #e7e8ea
+}
+
+.custom-radio>input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+
+.group1[type="radio"]:not(:checked), .group1[type="radio"]:checked,
+.group1[type="checkbox"]:not(:checked), .group1[type="checkbox"]:checked{
+  position: relative;
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: all;
+  color: #ef6c00;
+  background-color: #ef6c00;
+}
+.form-row{
+  display: flex;
+  flex-direction: row;
+}
+.form-row > div{
+  padding: 10px;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-bottom: 0;
+}
+.input-sex{
+  padding: 1rem;
+}
+.input-sex > label {
+  font-size: 1rem;
+  padding: 0 10px;
+}
+.input-sex > input {
+  padding: 0 10px 0 5px;
+}
+.form-calculator{
+  max-width: 700px;
+  /*border: 1px solid red;*/
+  margin: 0 auto;
+  padding: 1rem 1rem 2rem 1rem;
+  border-top: 1px solid #9e9e9e29;
+  box-shadow: 0 2px 2px 0 #9e9e9e;
+}
+.form-calculator form{
+  font-family: "Kerola Bold";
+}
+
+.input-title {
+  color: #9e9e9e;
+  justify-content: left;
+  margin: 0;
+  padding: 1rem 0 0 1rem;
+}
+select{
+  display: block;
+  font-family: Kerola;
+  cursor: pointer;
+}
+option, label{
+  cursor: pointer !important;
+}
+option:nth-child(1){
+  font-family: "Kerola Bold";
+}
+.col .row {
+ margin-left: -0.75rem;
+margin-right: -0.75rem;
+}
+.btn-row.calculator{
+  margin-top: 2rem;
+  justify-content: space-around;
+}
+.nutrition-back{
+  position: absolute;
+  z-index: -1;
+  bottom: 70px;
+  left: 250px;
+  height: 522px;
+}
+@media (max-width: 1198.98px) {
+  .nutrition-back{
+    bottom: -50px;
+    left: 0;
+    width: 85%;
+  }
+}
+@media (max-width: 922px) {
+  .nutrition-back{
+    display: none;
+  }
+}
+
+.result{
+  /*background: transparent;*/
+  max-width: 700px;
+  margin: 0 auto;
+}
+.result-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+
+.title-result{
+  font-family: "Kerola Bold";
+  font-size: 1.5rem;
+  color: #ff8a65;
+}
+.result-wrong{
+  font-family: "Kerola Light";
+  font-size: 1.5rem;
+  color: #ff8a65;
+}
+option [selected]{
+  font-family: "Kerola Bold";
+}
+.nutrition-facts{
+  padding: 1rem;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 0 10px 0 rgb(41 41 41 / 18%);
+  margin: 2rem auto;
+}
+.nutrition-header{
+  font-family: "Kerola";
+  font-size: 2rem;
+  text-align: left;
+  border-bottom: 10px solid #E8E8E8;
+  padding: 0 0 0.25rem 0;
+  margin: 0 0 0.5rem 0;
+}
+.nutrition-subheader{
+  font-family: "Kerola Light";
+  font-size: .8rem;
+}
+th, td{
+  padding: 5px;
+}
+.nutrition-calories{
+  font-family: "Kerola Bold";
+  font-size: 1.5rem;
+}
+.nutrition-value{
+  text-align: right;
+  font-family: Kerola;
+}
+.small-info{
+  text-align: right;
+  font-size: .7rem;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  padding: 2px;
+}
+.title-fact{
+  font-family: "Kerola Light";
+  font-size: .8rem;
+}
+#ingr{
+  width: 400px;
+  margin: 0 auto;
+}
+#ingr+label{
+  width: 400px;
+  left: 30%;
+}
+.dropdown-button{
+  background-color: rgba(255,255,255,0.9);
+  width: 100%;
+  padding: 5px 5px 5px 9px;
+  border: 1px solid #f2f2f2;
+  border-radius: 2px;
+  height: 3rem;
+  font-family: Kerola;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.dropdown-menu{
+  display: flex;
+  flex-wrap: wrap;
+}
+.dropdown-menu > li{
+  /*widt: 30%;*/
+}
+.dropdown-menu > li > p > input[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.css-1fdsijx-ValueContainer {
+  height: 43px;
+  padding: 0 !important;
+}
+.css-qbdosj-Input{
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.checkbox-content{
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.custom-checkbox{
+  opacity: 1 !important;
+  position: relative !important;
+  pointer-events: auto !important;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.product-list{
+  width: 50%;
+  text-align: left;
+}
+.select{
+  margin-top: 5px;
+  background-color: rgba(255,255,255,0.9);
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #f2f2f2;
+  border-radius: 2px;
+  height: 3rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion-content {
+  overflow: hidden;
+  transition: max-height 1s ease;
+}
+.choose-all{
+  width: 100%;
+  text-align: left;
+}
+.choose-all > label{
+  color: #0000008a;
+}
+
+.circle-chart {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+.chart{
+  position: absolute;
+}
+.circle.center {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: white;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+  }
+.legend{
+  padding: 1rem 0;
+}
+
+.legend-raw{
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.legend-color{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.legend-description{
+  font-family: "Kerola Light";
+}
+.result-content{
+  display: flex;
+}
+table.container {
+  font-family: "Kerola Light";
+}
+table.container tr th{
+  font-family: "Kerola Bold";
+}
+.nutrition-res .btn-row.calculator{
+  justify-content: space-between;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.plan-res{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.plan{
+  width: 30%;
+}
+.diet{
+  width: 70%;
+}
+.transparent-title{
+  color: transparent;
+}
+.title{
+  font-family: 'Kerola Bold';
+  font-size: 2rem;
+  text-align: left;
+}
+.res-ul{
+  font-family: Kerola;
+}
+.sliderday{
+  width: 100%;
+  /*height: 100%;*/
+  position: absolute;
+}
+.slider-wrap{
+  position: relative;
+  height: 115vh;
+}
+.active.sliderday{
+  z-index: 100;
+}
+.inactive.sliderday{
+  display: none;
+}
+.btn-raw{
+  display: flex;
+  justify-content: center;
+  z-index: 150;
+}
+.btn-raw-trainer{
+  display: flex;
+  justify-content: space-between;
+  z-index: 150;
+  width: 105%;
+}
+.navigate-day{
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.btn-raw a{
+  padding: 0 0.5rem;
+}
+.title-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.title-row .title-result{
+  color: #795548;
+}
+
+
+/*Trainer Page*/
+
+.info-block{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.info-block > a{
+  margin-top: 2rem;
+}
+.trainer-stat{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  font-family: Kerola;
+  margin-top: 1rem;
+}
+.stat-amount{
+  font-size: 3rem;
+}
+.stat-name{
+  font-family: "Kerola Light";
+}
+.info-trainer{
+  width: 100vw;
+  height: 600px;
+}
+.info-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  margin-top: 3px;
+}
+.info-content .selected-photo > img{
+  width: 92%;
+}
+.slider-trainer{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.slider-trainer > .active{
+  z-index: 1;
+}
+.slider-trainer > .inactive{
+  z-index: -101;
+  display: none;
+}
+.slider-trainer > img{
+  width: 100%;
+}
+.sliders-wrap{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.sliders-content{
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+}
+.trainer-title{
+  font-family: "Kerola Bold";
+  font-size: 4rem;
+}
+.video-about{
+  width: 600px
+}
+.about-info > video{
+  width: 40%;
+}
+.about-info{
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+}
+.about-title{
+  text-align: center;
+  font-family: Kerola;
+  font-size: 2rem;
+}
+.about-description{
+  text-align: left;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  text-align: justify;
+}
+.start-training{
+  border-radius: 5px;
+}
+.selected-photo > div > button.slick-arrow.slick-prev{
+  left: 0 !important;
+}
+.selected-photo > div > button.slick-arrow.slick-next{
+  right: 0 !important;
+}
+
+.slick-prev, .slick-next{
+  z-index: 100;
+}
+
+
+@media (max-width: 1024px) {
+  .trainer-title{
+    font-size: 2.5rem;
+  }
+  .stat-amount{
+    font-size: 1.5rem;
+  }
+  .stat-name{
+    font-size: .8rem;
+  }
+  .info-about{
+    margin-top: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .trainer-title{
+    font-size: 1.5rem;
+  }
+  .trainer-stat{
+    flex-direction: column;
+  }
+  .start-training > i{
+    display: none;
+  }
+  .btn-large{
+    padding: 0 14px;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .info-content{
+    grid-template-columns: 1fr;
+  }
+  .trainer-stat{
+    flex-direction: row;
+  }
+  .info-content > .selected-photo{
+    width: 300px;
+    height: auto;
+    margin: 1rem auto;
+  }
+  .info-about{
+    margin-top: 0;
+  }
+  .about-info{
+    flex-direction: column;
+  }
+  .about-info > video {
+    width: 100%;
+  }
+  .about-description{
+    padding-top: 1rem;
+  }
+
+
+}
+
+
+/*Slider Programs*/
+
+.slider-programs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 2s ease;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider-programs .slider-container > a{
+  width: 300px;
+  margin-right: 10px;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.prev-button:focus,
+.next-button:focus {
+  outline: none;
+}
+
+.prev-button[disabled],
+.next-button[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.link{
+  padding: 0 10px;
+  transition: background-color .5s;
+}
+.link:hover{
+  background-color: #c5f0ffc9;
+}
+
+@media (max-width: 1024px){
+  .info-content .selected-photo > img{
+    width: 92%;
+  }
+}
+
+/*BreadCrumbs*/
+.nav-breadcrumb{
+  background-color: transparent;
+  box-shadow: none;
+  height: auto;
+}
+.breadcrumb {
+  display: flex;
+  flex-direction: row;
+}
+.breadcrumb-item{
+  padding: 0 0 0 1rem;
+}
+.breadcrumb-item:after{
+  content: ">";
+  color: #039be5;
+  margin-left: 10px;
+}
+@media (max-width: 992px){
+  .breadcrumb{
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  .breadcrumb .breadcrumb-item{
+    padding-left: .4rem;
+  }
+  .breadcrumb-item:after{
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 400px){
+  .link-breadcrumb, li.active-last{
+    font-size: .7rem !important;
+  }
+}
+
+
+
+.link-breadcrumb{
+  font-family: Kerola;
+  position: relative;
+  text-decoration: none;
+  color: #039be5;
+}
+
+li.active-last{
+  font-family: "Kerola Bold";
+  color: #039be5;
+}
+li.active-last:after{
+  content: '';
+}
+
+
+.link-breadcrumb:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #039be5;
+  content: "";
+  transition: width 0.3s ease-out;
+  top: 20px;
+}
+
+.link-breadcrumb:hover:after,
+.link-breadcrumb:focus:after {
+  width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
